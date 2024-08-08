@@ -28,6 +28,8 @@ public:
 
 private:
     Ui::LoginDialog *ui;
+signals:
+    void switchRegister();
 };
 
 #endif // LOGIN_DIALOG_H

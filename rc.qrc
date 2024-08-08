@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>resource/ice.png</file>
+        <file>style/style_sheet.qss</file>
     </qresource>
 </RCC>
