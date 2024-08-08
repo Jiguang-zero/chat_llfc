@@ -25,8 +25,12 @@ public:
     explicit RegisterDialog(QWidget *parent = nullptr);
     ~RegisterDialog();
 
+private slots:
+    void on_get_code_button_clicked();
+
 private:
     Ui::RegisterDialog *ui;
+    void showErrorMessage(QString str, bool b_ok);
 };
 
 #endif // REGISTER_DIALOG_H
