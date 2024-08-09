@@ -1,1 +1,7 @@
-build/
+client/chat_llfc/build/
+server/GateServer/x64/
+server/GateServer/.vs/
+server/GateServer/vcpkg.D.zearo.computer.tool.vcpkg.1.0.0.nupkg
+server/GateServer/GateServer.vcxproj
+server/GateServer/GateServer.vcxproj.filters
+
