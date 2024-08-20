@@ -25,13 +25,17 @@ RegisterDialog::~RegisterDialog()
 
 void RegisterDialog::on_get_code_button_clicked()
 {
-    auto email = ui->email_label->text();
+    auto email = ui->email_edit->text();
     static const QRegularExpression regex(R"((\w+)(\.|_)?(\w*)@(\w+)(\.(\w+))+)");
     auto regexMatch = regex.match(email);
     bool match = regexMatch.hasMatch();
 
     if (match) {
         // 发送验证码
+        QJsonObject json_obj;
+        json_obj["email"] = email;
+        HttpManager::GetInstance()->PostHttpRequest(QUrl(gate_url_prefix + "/get_verify_code"),
+                                                    json_obj, ReqId::ID_GET_VARIFY_CODE, Modules::REGISTER_MOD);
     } else {
         showErrorMessage(tr("邮箱地址不正确"), false);
     }

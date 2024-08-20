@@ -16,6 +16,8 @@
 #include <QRegularExpression>
 #include <QByteArray>
 #include <QNetworkReply>
+#include <QJsonObject>
+#include <QDir>
 
 #include "Qstyle"
 
@@ -38,5 +40,7 @@ enum ErrorCodes {
     ERR_JSON = 1, // json parsed failed
     ERR_NETWORK = 2, // NETWORK error
 };
+
+extern QString gate_url_prefix;
 
 #endif // GLOBAL_H

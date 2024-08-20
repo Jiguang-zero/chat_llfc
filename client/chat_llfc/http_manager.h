@@ -31,11 +31,12 @@ private:
     friend class Singleton<HttpManager>; // 基类需要构造函数
     HttpManager();
     QNetworkAccessManager _manager;
-    void PostHttpRequest(QUrl url, QJsonObject json, ReqId req_id, Modules mod);
 
 public:
     // 智能指针需要析构 公有
     ~HttpManager();
+
+    void PostHttpRequest(QUrl url, QJsonObject json, ReqId req_id, Modules mod);
 
 private slots:
     void slot_http_finish(ReqId id, QString res, ErrorCodes err, Modules mod);
